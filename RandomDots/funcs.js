@@ -1,3 +1,7 @@
+function start() {
+	canvas = document.getElementById("drawarea");
+	setCanvasSize(70, 70);
+}
 
 function zfill(snum, len) {
 	return ('0'.repeat(len-snum.length)) + snum;
@@ -6,8 +10,6 @@ function zfill(snum, len) {
 function RGBToHex(r, g, b) {
 	return '#' + zfill(Number(r).toString(16),2) + zfill(Number(g).toString(16),2) + zfill(Number(b).toString(16),2);
 }
-
-var canvas = document.getElementById("drawarea");
 
 function setCanvasSize(w, h) {
 	canvas.width = window.innerWidth*w/100;
@@ -37,4 +39,4 @@ function detectClick(event) {
 	
 	var color = RGBToHex(red, green, blue);
 	drawCircle(posX, posY, rad, color);
-}
+} 
